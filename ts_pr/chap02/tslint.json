@@ -1,0 +1,11 @@
+// ./node_modules/.bin/tslint --init
+// ESLintに代わりました。
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {},
+    "rulesDirectory": []
+}
