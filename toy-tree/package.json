@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
-    "lint": "eslint \"**/*.ts\""
+    "lint": "eslint \"**/*.ts\"",
+    "format": "prettier --write \"**/*.{js,ts,json,md}\""
   },
   "bin": {
     "toy-tree": "dist/bin.js"
@@ -24,7 +25,9 @@
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
     "jest": "^26.1.0",
+    "prettier": "^2.0.5",
     "ts-jest": "^26.1.1",
     "typescript": "^3.9.6"
   },
@@ -36,14 +39,17 @@
     "setupFiles": [
       "./jest.setup.js"
     ]
-  },  "eslintConfig": {
+  },
+  "eslintConfig": {
     "parser": "@typescript-eslint/parser",
     "plugins": [
       "@typescript-eslint"
     ],
     "extends": [
       "eslint:recommended",
-      "plugin:@typescript-eslint/recommended"
+      "plugin:@typescript-eslint/recommended",
+      "prettier",
+      "prettier/@typescript-eslint"
     ],
     "rules": {
       "@typescript-eslint/no-explicit-any": "off",
