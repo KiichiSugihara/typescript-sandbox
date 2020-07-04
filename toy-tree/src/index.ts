@@ -1,7 +1,7 @@
-import meow from 'meow';
-import { read } from './read';
-import { format } from './format';
-import { DirectoryNode, Options } from './types';
+import meow from "meow";
+import { read } from "./read";
+import { format } from "./format";
+import { DirectoryNode, Options } from "./types";
 
 type Writer = (...args: any[]) => void;
 
@@ -21,23 +21,23 @@ export const main = (argv: string[], stdout: Writer, stderr: Writer) => {
     {
       flags: {
         level: {
-          type: 'number',
-          alias: 'L',
+          type: "number",
+          alias: "L",
           default: Infinity,
         },
       },
       argv,
-    },
+    }
   );
 
-  const dir = cli.input[0] || '.';
+  const dir = cli.input[0] || ".";
 
   const options: Options = {
     level: cli.flags.level,
   };
 
   if (options.level < 1) {
-    stderr('Error: Invalid level, must be greater than 0.');
+    stderr("Error: Invalid level, must be greater than 0.");
     return 1;
   }
 

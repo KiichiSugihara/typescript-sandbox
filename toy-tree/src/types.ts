@@ -11,9 +11,9 @@ interface BaseNode<T> {
   name: string;
 }
 
-export interface FileNode extends BaseNode<'file'> {}
+export interface FileNode extends BaseNode<"file"> {}
 
-export interface DirectoryNode extends BaseNode<'directory'> {
+export interface DirectoryNode extends BaseNode<"directory"> {
   children: TreeNode[];
 }
 
